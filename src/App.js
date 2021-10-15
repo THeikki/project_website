@@ -1,13 +1,14 @@
-//import './App.css';
 import React, { useState } from "react"
 import axios from 'axios'
 import Login from './components/Login';
-import StatsButton from './components/StatsButton';
 import User from './components/User';
 
 function App() {
 
   const [user, setGameStats] = useState([])
+  const [showLogin, setShowLogin] = useState(true)
+  const [showUser, setShowUser] = useState(true)
+
 
   const getUserInfo = () => {
     const id = JSON.parse(localStorage.getItem("userId"))
@@ -43,26 +44,35 @@ function App() {
       
       if(alertMessage) {
         alert(alertMessage)
-        localStorage.removeItem()
+        localStorage.removeItem(token)
       }
      
       localStorage.setItem("token", token)
       localStorage.setItem("userId", id)
       console.log(token)
       console.log(id)
+
+      getUserInfo()
+
+      setShowLogin(false)
+      setShowUser(true)
      
     }).catch(err => {
       console.log(err)
     })
   }
 
+  const logout = () => {
+    localStorage.clear()
+    setShowLogin(true)
+    setShowUser(false)
+}
+
   return (
-    <div className="App">
-      <h1>Login</h1>
-      <Login onTesti={login}/>
-      <h2>Player statistics</h2>
-      <User user={user}/>
-      <StatsButton text="Get player stats" handleClick={getUserInfo}/>
+    <div className="content">
+      <h1 className="h1" > Game statistics page </h1>
+      {showLogin ? <Login onAdd={login}/> : null}  
+      {showUser ? <User user={user} onClose={logout} /> : null}
     </div>
   );
 }

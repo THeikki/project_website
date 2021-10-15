@@ -1,4 +1,14 @@
-const User = ({ user }) => {
+import LogoutButton from "./LogoutButton"
+
+const User = ({ onClose, user }) => {
+
+    const onLogout = (e) => {
+
+        e.preventDefault()
+        window.localStorage.clear()
+
+        onClose()
+    }
 
     if(user.length === 0) {
         return (
@@ -9,16 +19,54 @@ const User = ({ user }) => {
     }
 
     return (
-        <div>
-            <h3> User Name </h3>
-            <p> { user.username } </p>
-            <h3> Times Played </h3>
-            <p> { user.gameTimes }</p>
-            <h3> High Score </h3>
-            <p> { user.highScore } </p>
-            <h3> Overall Points </h3>
-            <p> { user.overallPoints } </p>
-        </div>
+        <>
+            <h2>Player statistics</h2>
+            <table className="userInfo">
+                <thead>
+                    <tr>
+                        <th> User name </th>
+                    </tr>
+                    
+                </thead>
+                <tbody>
+                        <tr>
+                            <td> { user.username } </td>
+                        </tr>  
+                    </tbody>
+                <thead>
+                    <tr>
+                        <th> Playtimes </th>
+                    </tr>
+                </thead>
+                <tbody>
+                        <tr>
+                            <td> { user.gameTimes } </td>
+                        </tr>
+                    </tbody>
+                <thead>
+                        <tr>
+                        <th> Highscore </th>
+                    </tr> 
+                </thead>
+                <tbody>
+                        <tr>
+                            <td> { user.highScore } </td>
+                         </tr>
+                    </tbody>
+                <thead>
+                    <tr>
+                        <th> Overall points </th>
+                    </tr>
+                </thead>
+                <tbody>
+                        <tr>
+                            <td> { user.overallPoints } </td>
+                        </tr>
+                    </tbody>
+            </table>
+            <LogoutButton text="Log out" handleClick={onLogout}/>
+
+       </>
     )
 }
 

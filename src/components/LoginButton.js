@@ -1,6 +1,6 @@
 const LoginButton = ({handleClick, text}) => {
     return (
-        <button onClick={handleClick}> {text} </button>
+        <button className="loginButton" onClick={handleClick}> {text} </button>
     )
 }
 

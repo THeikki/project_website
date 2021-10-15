@@ -3,11 +3,11 @@ import LoginButton from "./LoginButton"
 import Password from "./Password"
 import UserName from "./UserName"
 
-const Login = ({ onTesti }) => {
+const Login = ({ onAdd }) => {
 
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-
+    const [username, setUsername] = useState("")
+    const [password, setPassword] = useState("")
+    
     const onLogin = (e) => {
         e.preventDefault()
     
@@ -21,7 +21,7 @@ const Login = ({ onTesti }) => {
             return
         }
 
-        onTesti({ username, password })
+        onAdd({ username, password })
     
         setUsername("")
         setPassword("")
@@ -30,9 +30,10 @@ const Login = ({ onTesti }) => {
 
     return (
         <>
+            <h1>Login</h1>
             <UserName type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />   
             <Password type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />   
-            <LoginButton text="Login" handleClick={onLogin}/>
+            <LoginButton text="Log in" handleClick={onLogin}/>
         </>    
     )
 }
