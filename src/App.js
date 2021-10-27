@@ -1,15 +1,17 @@
 import React, { useState } from "react"
 import axios from 'axios'
 import Login from './components/Login';
+import Register from "./components/Register";
 import User from './components/User';
 
 function App() {
 
   const [user, setGameStats] = useState([])
-  const [showLogin, setShowLogin] = useState(true)
+  const [showRegister, setShowRegister] = useState(true)
+  const [showLogin, setShowLogin] = useState(false)
   const [showUser, setShowUser] = useState(true)
 
-
+  // GET user info
   const getUserInfo = () => {
     const id = JSON.parse(localStorage.getItem("userId"))
     const token = JSON.parse(localStorage.getItem("token")) 
@@ -29,6 +31,43 @@ function App() {
         console.log(err.response.data.message)
       })
   }
+
+  // Hide login component
+  const showLoginComponent = (e) => {
+    e.preventDefault()
+    setShowLogin(true)
+    setShowRegister(false)
+  }
+
+  // Hide register component
+  const showRegisterComponent = (e) => {
+    e.preventDefault()
+    setShowLogin(false)
+    setShowRegister(true)
+  }
+
+  // Register new user
+  const register = ({ username, password }) => {
+    const user = {
+      username: username,
+      password: password
+    }
+    
+    axios.post("http://localhost:5000/api/users/register", user)
+    .then(res => {
+      var alertMessage = JSON.stringify(res.data.message)
+      
+      if(alertMessage) {
+        alert(alertMessage)
+        console.log(alertMessage)
+      }     
+    }).catch(err => {
+      console.log(err)
+      
+    })
+  }
+
+  // Log in user
 
   const login = ({ username, password }) => {
     const user = {
@@ -55,6 +94,7 @@ function App() {
       getUserInfo()
 
       setShowLogin(false)
+      setShowRegister(false)
       setShowUser(true)
      
     }).catch(err => {
@@ -62,17 +102,46 @@ function App() {
     })
   }
 
-  const logout = () => {
+  // Log out from account
+  const logout = (e) => {
+    e.preventDefault()
     localStorage.clear()
+    setGameStats([])
     setShowLogin(true)
     setShowUser(false)
+}
+
+// Delete user account
+const deleteUser = () => {
+  const id = JSON.parse(localStorage.getItem("userId"))
+  const token = JSON.parse(localStorage.getItem("token")) 
+ 
+  axios.delete("http://localhost:5000/api/users/" +id, {
+    headers: {
+      "Authorization": 'Bearer ' + token
+    }
+    })
+    .then(res => {
+      var alertMessage = JSON.stringify(res.data.message)
+      alert(alertMessage)
+      localStorage.clear()
+      setGameStats([])
+      setShowRegister(true)
+      
+    })
+    .catch(err => {
+      var alertMessage = JSON.stringify(err.response.data.message)
+      alert(alertMessage)
+      console.log(err.response.data.message)
+    })
 }
 
   return (
     <div className="content">
       <h1 className="h1" > Game statistics page </h1>
-      {showLogin ? <Login onAdd={login}/> : null}  
-      {showUser ? <User user={user} onClose={logout} /> : null}
+      {showRegister ? <Register onAdd={register} onPress={showLoginComponent}/> : null}
+      {showLogin ? <Login onAdd={login} onPress={showRegisterComponent}/> : null}  
+      {showUser ? <User user={user} onClose={logout} onDelete={deleteUser} /> : null}
     </div>
   );
 }

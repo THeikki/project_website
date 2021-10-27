@@ -1,15 +1,8 @@
 import LogoutButton from "./LogoutButton"
+import DeleteButton from "./DeleteButton"
 
-const User = ({ onClose, user }) => {
-
-    const onLogout = (e) => {
-
-        e.preventDefault()
-        window.localStorage.clear()
-
-        onClose()
-    }
-
+const User = ({ onClose, user, onDelete }) => {
+    
     if(user.length === 0) {
         return (
             <div>
@@ -45,7 +38,7 @@ const User = ({ onClose, user }) => {
                     </tbody>
                 <thead>
                         <tr>
-                        <th> Highscore </th>
+                        <th> High score </th>
                     </tr> 
                 </thead>
                 <tbody>
@@ -64,8 +57,9 @@ const User = ({ onClose, user }) => {
                         </tr>
                     </tbody>
             </table>
-            <LogoutButton text="Log out" handleClick={onLogout}/>
-
+            <LogoutButton text="Log out" handleClick={onClose}/>
+            <p>Here you can delete user account</p>
+            <DeleteButton text="Delete user" handleClick={onDelete}/>
        </>
     )
 }
