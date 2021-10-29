@@ -13,7 +13,7 @@ const Register = ({ onAdd, onPress }) => {
         e.preventDefault()
     
         if (!username) {
-          alert("Please give username!")
+          alert("Please give user name!")
           return
         }
 

@@ -13,7 +13,7 @@ const Login = ({ onAdd, onPress }) => {
         e.preventDefault()
     
         if (!username) {
-          alert("Please enter username!")
+          alert("Please enter user name!")
           return
         }
 

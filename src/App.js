@@ -138,7 +138,7 @@ const deleteUser = () => {
 
   return (
     <div className="content">
-      <h1 className="h1" > Game statistics page </h1>
+      <h1 className="h1" > Spacecraft Shooter 2D </h1>
       {showRegister ? <Register onAdd={register} onPress={showLoginComponent}/> : null}
       {showLogin ? <Login onAdd={login} onPress={showRegisterComponent}/> : null}  
       {showUser ? <User user={user} onClose={logout} onDelete={deleteUser} /> : null}
