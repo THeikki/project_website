@@ -1,14 +1,10 @@
 import { useState } from "react"
-import RegisterButton from "./RegisterButton"
-import LinkButton from "./LinkButton"
-import Password from "./Password"
-import UserName from "./UserName"
 
 const Register = ({ onAdd, onPress }) => {
 
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
-    
+  
     const onRegister = (e) => {
         e.preventDefault()
     
@@ -32,13 +28,21 @@ const Register = ({ onAdd, onPress }) => {
     return (
         <div className="registerComponent">
             <h2>Register</h2>
-            <UserName type="text" placeholder="User name" value={username} onChange={(e) => setUsername(e.target.value)} />   
-            <Password type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />   
-            <RegisterButton text="Register" handleClick={onRegister}/>
+            <div>
+                <label>User name</label>
+                <br></br>
+                <input className="inputBox" type="text" placeholder="User name" value={username} onChange={(e) => setUsername(e.target.value)}/>
+            </div>
+            <div>
+                <label>Password</label>
+                <br></br>
+                <input className="inputBox" type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+            </div> 
+            <button className="registerButton" onClick={onRegister}> Register </button>
             <br></br>
             <br></br>
             <p>If you are registered already, please</p>
-            <LinkButton text="Login here" handleClick={onPress}/>
+            <button className="linkButton" onClick={onPress}> Log in here </button>
         </div>    
     )
 }

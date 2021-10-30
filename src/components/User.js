@@ -1,6 +1,3 @@
-import LogoutButton from "./LogoutButton"
-import DeleteButton from "./DeleteButton"
-
 const User = ({ onClose, user, onDelete }) => {
     
     if(user.length === 0) {
@@ -18,48 +15,47 @@ const User = ({ onClose, user, onDelete }) => {
                 <thead>
                     <tr>
                         <th> User name </th>
-                    </tr>
-                    
+                    </tr>    
                 </thead>
                 <tbody>
-                        <tr>
-                            <td> { user.username } </td>
-                        </tr>  
-                    </tbody>
+                     <tr>
+                         <td> { user.username } </td>
+                    </tr>  
+                </tbody>
                 <thead>
                     <tr>
                         <th> Playtimes </th>
                     </tr>
                 </thead>
                 <tbody>
-                        <tr>
-                            <td> { user.gameTimes } </td>
-                        </tr>
-                    </tbody>
+                    <tr>
+                           <td> { user.gameTimes } </td>
+                    </tr>
+                </tbody>
                 <thead>
-                        <tr>
+                    <tr>
                         <th> High score </th>
                     </tr> 
                 </thead>
                 <tbody>
                         <tr>
                             <td> { user.highScore } </td>
-                         </tr>
-                    </tbody>
+                        </tr>
+                </tbody>
                 <thead>
                     <tr>
                         <th> Overall points </th>
                     </tr>
                 </thead>
                 <tbody>
-                        <tr>
-                            <td> { user.overallPoints } </td>
-                        </tr>
-                    </tbody>
+                     <tr>
+                        <td> { user.overallPoints } </td>
+                    </tr>
+                </tbody>
             </table>
-            <LogoutButton text="Log out" handleClick={onClose}/>
+            <button className="logoutButton" onClick={onClose}> Log out </button>
             <p>Here you can delete user account</p>
-            <DeleteButton text="Delete user" handleClick={onDelete}/>
+            <button className="deleteButton" onClick={onDelete}> Delete </button>
        </>
     )
 }
