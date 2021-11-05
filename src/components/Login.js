@@ -9,8 +9,8 @@ const Login = ({ onAdd, onPress }) => {
         e.preventDefault()
     
         if (!username) {
-          alert("Please enter user name!")
-          return
+            alert("Please enter user name!")
+            return
         }
 
         else if (!password) {

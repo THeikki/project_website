@@ -4,7 +4,7 @@ const Register = ({ onAdd, onPress }) => {
 
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
-  
+    
     const onRegister = (e) => {
         e.preventDefault()
     

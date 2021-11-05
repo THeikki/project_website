@@ -15,7 +15,7 @@ const User = ({ onClose, user, onDelete }) => {
                 <thead>
                     <tr>
                         <th> User name </th>
-                    </tr>    
+                    </tr>   
                 </thead>
                 <tbody>
                      <tr>
@@ -29,18 +29,18 @@ const User = ({ onClose, user, onDelete }) => {
                 </thead>
                 <tbody>
                     <tr>
-                           <td> { user.gameTimes } </td>
+                        <td> { user.gameTimes } </td>
                     </tr>
                 </tbody>
                 <thead>
                     <tr>
-                        <th> High score </th>
+                    <th> High score </th>
                     </tr> 
                 </thead>
                 <tbody>
-                        <tr>
-                            <td> { user.highScore } </td>
-                        </tr>
+                    <tr>
+                        <td> { user.highScore } </td>
+                    </tr>
                 </tbody>
                 <thead>
                     <tr>
@@ -48,7 +48,7 @@ const User = ({ onClose, user, onDelete }) => {
                     </tr>
                 </thead>
                 <tbody>
-                     <tr>
+                    <tr>
                         <td> { user.overallPoints } </td>
                     </tr>
                 </tbody>

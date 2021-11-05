@@ -6,12 +6,13 @@ import User from './components/User';
 
 function App() {
 
-  const [user, setGameStats] = useState([])
+  const [user, setUserStats] = useState([])
   const [showRegister, setShowRegister] = useState(true)
   const [showLogin, setShowLogin] = useState(false)
   const [showUser, setShowUser] = useState(true)
 
-  // GET user info
+  // Get user info
+
   const getUserInfo = () => {
     const id = JSON.parse(localStorage.getItem("userId"))
     const token = JSON.parse(localStorage.getItem("token")) 
@@ -22,7 +23,7 @@ function App() {
       }
       })
       .then(res => {
-        setGameStats(res.data)
+        setUserStats(res.data)
         
       })
       .catch(err => {
@@ -30,41 +31,6 @@ function App() {
         alert(alertMessage)
         console.log(err.response.data.message)
       })
-  }
-
-  // Hide login component
-  const showLoginComponent = (e) => {
-    e.preventDefault()
-    setShowLogin(true)
-    setShowRegister(false)
-  }
-
-  // Hide register component
-  const showRegisterComponent = (e) => {
-    e.preventDefault()
-    setShowLogin(false)
-    setShowRegister(true)
-  }
-
-  // Register new user
-  const register = ({ username, password }) => {
-    const user = {
-      username: username,
-      password: password
-    }
-    
-    axios.post("http://localhost:5000/api/users/register", user)
-    .then(res => {
-      var alertMessage = JSON.stringify(res.data.message)
-      
-      if(alertMessage) {
-        alert(alertMessage)
-        console.log(alertMessage)
-      }     
-    }).catch(err => {
-      console.log(err)
-      
-    })
   }
 
   // Log in user
@@ -102,39 +68,79 @@ function App() {
     })
   }
 
+  // Register new user
+
+  const register = ({ username, password }) => {
+    const user = {
+      username: username,
+      password: password
+    }
+    
+    axios.post("http://localhost:5000/api/users/register", user)
+    .then(res => {
+      var alertMessage = JSON.stringify(res.data.message)
+      
+      if(alertMessage) {
+        alert(alertMessage)
+        console.log(alertMessage)
+      }     
+    }).catch(err => {
+      console.log(err)
+      
+    })
+  }
+
+  // Delete user account
+
+  const deleteUser = () => {
+    const id = JSON.parse(localStorage.getItem("userId"))
+    const token = JSON.parse(localStorage.getItem("token")) 
+  
+    axios.delete("http://localhost:5000/api/users/" +id, {
+      headers: {
+        "Authorization": 'Bearer ' + token
+      }
+      })
+      .then(res => {
+        var alertMessage = JSON.stringify(res.data.message)
+        alert(alertMessage)
+        localStorage.clear()
+        setUserStats([])
+        setShowRegister(true)
+        
+      })
+      .catch(err => {
+        var alertMessage = JSON.stringify(err.response.data.message)
+        alert(alertMessage)
+        console.log(err.response.data.message)
+      })
+  }
+
   // Log out from account
+
   const logout = (e) => {
     e.preventDefault()
     localStorage.clear()
-    setGameStats([])
+    setUserStats([])
     setShowLogin(true)
     setShowUser(false)
-}
+  }
 
-// Delete user account
-const deleteUser = () => {
-  const id = JSON.parse(localStorage.getItem("userId"))
-  const token = JSON.parse(localStorage.getItem("token")) 
- 
-  axios.delete("http://localhost:5000/api/users/" +id, {
-    headers: {
-      "Authorization": 'Bearer ' + token
-    }
-    })
-    .then(res => {
-      var alertMessage = JSON.stringify(res.data.message)
-      alert(alertMessage)
-      localStorage.clear()
-      setGameStats([])
-      setShowRegister(true)
-      
-    })
-    .catch(err => {
-      var alertMessage = JSON.stringify(err.response.data.message)
-      alert(alertMessage)
-      console.log(err.response.data.message)
-    })
-}
+  // Hide login component
+
+  const showLoginComponent = (e) => {
+    e.preventDefault()
+    setShowLogin(true)
+    setShowRegister(false)
+  }
+
+  // Hide register component
+
+  const showRegisterComponent = (e) => {
+    e.preventDefault()
+    setShowLogin(false)
+    setShowRegister(true)
+  }
 
   return (
     <div className="content">
