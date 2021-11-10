@@ -1,8 +1,3 @@
-//import background from './Main_background.png'
-
-//testing
-//Testi
-
 const User = ({ onClose, user, onDelete }) => {
     
     if(user.length === 0) {
