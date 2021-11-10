@@ -161,6 +161,7 @@ h1 {
   margin-left: auto;
   margin-right: auto;
   margin-top: auto;
+  margin-bottom: auto;
   width: 500px;
   background-color: cadetblue;
   border-radius: 5px;
@@ -171,7 +172,8 @@ h1 {
   padding: 10px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 100px;
+  margin-top: auto;
+  margin-bottom: auto;
   width: 500px;
   background-color: rgb(130, 160, 95);
   border-radius: 5px;
