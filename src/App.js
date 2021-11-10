@@ -146,7 +146,6 @@ function App() {
 
   return (
     <div className="content">
-      <div> className="container"</div>
       <h1 className="h1" > Power Politics of Cosmos </h1>
       {showRegister ? <Register onAdd={register} onPress={showLoginComponent}/> : null}
       {showLogin ? <Login onAdd={login} onPress={showRegisterComponent}/> : null}  
