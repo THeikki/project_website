@@ -11,7 +11,9 @@ const User = ({ onClose, user, onDelete }) => {
     }
 
     return (
-        <div style={{ backgroundImage: `url(${background})` }}>
+        <>
+            <div> div style={{ backgroundImage: `url(${background})` }}
+            </div>
             <h2>Player statistics</h2>
             <table className="userInfo">
                 <thead>
@@ -58,7 +60,7 @@ const User = ({ onClose, user, onDelete }) => {
             <button className="logoutButton" onClick={onClose}> Log out </button>
             <p>Here you can delete user account</p>
             <button className="deleteButton" onClick={onDelete}> Delete </button>
-       </div>
+       </>
     )
 }
 
