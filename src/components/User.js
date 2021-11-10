@@ -56,7 +56,6 @@ const User = ({ onClose, user, onDelete }) => {
                 </tbody>
             </table>
             <button className="logoutButton" onClick={onClose}> Log out </button>
-            <p>Here you can delete user account</p>
             <button className="deleteButton" onClick={onDelete}> Delete </button>
             
        </div>
