@@ -58,7 +58,7 @@ const User = ({ onClose, user, onDelete }) => {
             <button className="logoutButton" onClick={onClose}> Log out </button>
             <br></br>
             <br></br>
-            <button className="deleteButton" onClick={onDelete}> Delete </button>
+            <button className="deleteButton" onClick={onDelete}> Delete account</button>
             
        </div>
     )

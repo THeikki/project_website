@@ -125,11 +125,11 @@ tbody {
 
 .deleteButton {
   margin-top: 10px;
-  background-color:rgb(14, 13, 13);
+  background-color:rgb(194, 212, 33);
   border: none;
   padding: 15px;
   width: 200px;
-  color: white;
+  color: rgb(0, 0, 0);
   cursor: pointer;
   text-align: center;
   text-decoration: none;
