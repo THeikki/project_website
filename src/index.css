@@ -29,9 +29,9 @@ code {
 }
 
 .userInfo {
-  display: "inline-block";
-  position: fixed;
-  text-align: center;
+  align-items: 'center';
+  flex: 1;
+  justify-content: 'center';
   width: 200px;
   margin-top: 100px;
   margin-left: auto;
