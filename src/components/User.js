@@ -12,7 +12,7 @@ const User = ({ onClose, user, onDelete }) => {
 
     return (
         <div className="container"> 
-            <div className="test">
+            
             <table className="userInfo">
                 <thead>
                     <tr>
@@ -57,8 +57,6 @@ const User = ({ onClose, user, onDelete }) => {
             </table>
             <button className="logoutButton" onClick={onClose}> Log out </button>
             <button className="deleteButton" onClick={onDelete}> Delete </button>
-            </div>
-            
             
        </div>
     )
