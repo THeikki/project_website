@@ -1,3 +1,5 @@
+import background from './Main_background.png'
+
 const User = ({ onClose, user, onDelete }) => {
     
     if(user.length === 0) {
@@ -9,7 +11,7 @@ const User = ({ onClose, user, onDelete }) => {
     }
 
     return (
-        <>
+        <div style={{ backgroundImage: `url(${background})` }}>
             <h2>Player statistics</h2>
             <table className="userInfo">
                 <thead>
@@ -56,7 +58,7 @@ const User = ({ onClose, user, onDelete }) => {
             <button className="logoutButton" onClick={onClose}> Log out </button>
             <p>Here you can delete user account</p>
             <button className="deleteButton" onClick={onDelete}> Delete </button>
-       </>
+       </div>
     )
 }
 
