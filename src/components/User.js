@@ -12,7 +12,7 @@ const User = ({ onClose, user, onDelete }) => {
 
     return (
         <div className="container"> 
-            <div className="position">
+            
                 <table className="userInfo">
                     <thead>
                         <tr>
@@ -59,7 +59,7 @@ const User = ({ onClose, user, onDelete }) => {
                 <p>Here you can delete user account</p>
                 <button className="deleteButton" onClick={onDelete}> Delete </button>
                     
-            </div>
+            
             
        </div>
     )
