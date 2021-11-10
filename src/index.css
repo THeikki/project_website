@@ -10,11 +10,10 @@ body {
 
 .container{
   background-image: url(./Main_background.png);
-  background-repeat: no-repeat;
+  height: 100vh;
   background-position: center;
-  -webkit-background-size: contain;
-  -moz-background-size: contain;
-  -o-background-size: contain;
+  background-repeat: no-repeat;
+  background-size: cover;
   background-size: contain;
   
 }
