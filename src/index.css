@@ -1,4 +1,12 @@
-
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color:thistle;
+}
 
 .container{
   background-image: url(./Main_background.png);
@@ -8,6 +16,7 @@
   -moz-background-size: contain;
   -o-background-size: contain;
   background-size: contain;
+  
 }
 
 code {
