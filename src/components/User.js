@@ -13,7 +13,9 @@ const User = ({ onClose, user, onDelete }) => {
     }
 
     return (
-        <div style={{ backgroundImage: `url(${background})` }}>
+        <div> 
+            <div style={{ backgroundImage: `url(${background})` }}>
+            </div>
             <h2>Player statistics</h2>
             <table className="userInfo">
                 <thead>
