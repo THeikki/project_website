@@ -8,6 +8,8 @@ const User = ({ onClose, user, onDelete }) => {
         )
     }
 
+    //TESTI
+
     return (
         <div className="container"> 
             <div className="position">
