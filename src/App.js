@@ -17,7 +17,7 @@ function App() {
     const id = JSON.parse(localStorage.getItem("userId"))
     const token = JSON.parse(localStorage.getItem("token")) 
    
-    axios.get("http://localhost:5000/api/users/" +id, {
+    axios.get("https://project-game-api.herokuapp.com/api/users/" +id, {
       headers: {
         "Authorization": 'Bearer ' + token
       }
@@ -41,7 +41,7 @@ function App() {
       password: password
     }
     
-    axios.post("http://localhost:5000/api/users/login", user)
+    axios.post("https://project-game-api.herokuapp.com/api/users/login", user)
     .then(res => {
       var alertMessage = JSON.stringify(res.data.message)
       var token = JSON.stringify(res.data.token)
@@ -76,7 +76,7 @@ function App() {
       password: password
     }
     
-    axios.post("http://localhost:5000/api/users/register", user)
+    axios.post("https://project-game-api.herokuapp.com/api/users/register", user)
     .then(res => {
       var alertMessage = JSON.stringify(res.data.message)
       
@@ -96,7 +96,7 @@ function App() {
     const id = JSON.parse(localStorage.getItem("userId"))
     const token = JSON.parse(localStorage.getItem("token")) 
   
-    axios.delete("http://localhost:5000/api/users/" +id, {
+    axios.delete("https://project-game-api.herokuapp.com/api/users/" +id, {
       headers: {
         "Authorization": 'Bearer ' + token
       }
@@ -144,7 +144,7 @@ function App() {
 
   return (
     <div className="content">
-      <h1 className="h1" > Spacecraft Shooter 2D </h1>
+      <h1 className="h1" > Power Politics of Cosmos </h1>
       {showRegister ? <Register onAdd={register} onPress={showLoginComponent}/> : null}
       {showLogin ? <Login onAdd={login} onPress={showRegisterComponent}/> : null}  
       {showUser ? <User user={user} onClose={logout} onDelete={deleteUser} /> : null}
