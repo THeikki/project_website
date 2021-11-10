@@ -29,6 +29,7 @@ code {
 }
 
 .userInfo {
+  display: "inline-block";
   width: 400px;
   margin-top: 300px;
   margin-left: auto;
