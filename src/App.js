@@ -146,12 +146,12 @@ function App() {
 
   return (
     <div className="content">
-      <h1 className="h1" > Power Politics of Cosmos </h1>
+      
       {showRegister ? <Register onAdd={register} onPress={showLoginComponent}/> : null}
       {showLogin ? <Login onAdd={login} onPress={showRegisterComponent}/> : null}  
       {showUser ? <User user={user} onClose={logout} onDelete={deleteUser} /> : null}
     </div>
-  );
+  )
 }
 
 export default App;
