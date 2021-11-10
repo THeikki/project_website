@@ -1,4 +1,4 @@
-import background from './Main_background.png'
+//import background from './Main_background.png'
 
 //testing
 //Testi
