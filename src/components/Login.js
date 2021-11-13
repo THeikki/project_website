@@ -25,6 +25,8 @@ const Login = ({ onAdd, onPress }) => {
         
       }
 
+      //TESTI
+
     return (
         <div className="loginComponent">
             <h2>Login</h2>
