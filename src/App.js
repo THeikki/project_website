@@ -142,6 +142,8 @@ function App() {
     setShowRegister(true)
   }
 
+  // Added new backgroung image
+
   return (
     <div className="background_image_intro">
       <div className="content">
