@@ -143,11 +143,14 @@ function App() {
   }
 
   return (
-    <div className="content">
-      {showRegister ? <Register onAdd={register} onPress={showLoginComponent}/> : null}
-      {showLogin ? <Login onAdd={login} onPress={showRegisterComponent}/> : null}  
-      {showUser ? <User user={user} onClose={logout} onDelete={deleteUser} /> : null}
+    <div className="background_image_intro">
+      <div className="content">
+        {showRegister ? <Register onAdd={register} onPress={showLoginComponent}/> : null}
+        {showLogin ? <Login onAdd={login} onPress={showRegisterComponent}/> : null}  
+        {showUser ? <User user={user} onClose={logout} onDelete={deleteUser} /> : null}
+      </div>
     </div>
+    
   )
 }
 
