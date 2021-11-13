@@ -142,7 +142,7 @@ function App() {
     setShowRegister(true)
   }
 
-  // Added new backgroung image
+//TESTI
 
   return (
     <div className="background_image">
