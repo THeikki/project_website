@@ -145,12 +145,14 @@ function App() {
   // Added new backgroung image
 
   return (
-
-    <div className="content">
-      {showRegister ? <Register onAdd={register} onPress={showLoginComponent}/> : null}
-      {showLogin ? <Login onAdd={login} onPress={showRegisterComponent}/> : null}  
-      {showUser ? <User user={user} onClose={logout} onDelete={deleteUser} /> : null}
+    <div className="background_image">
+      <div className="content">
+        {showRegister ? <Register onAdd={register} onPress={showLoginComponent}/> : null}
+        {showLogin ? <Login onAdd={login} onPress={showRegisterComponent}/> : null}  
+        {showUser ? <User user={user} onClose={logout} onDelete={deleteUser} /> : null}
+      </div>
     </div>
+    
     
   )
 }

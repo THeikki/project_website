@@ -11,7 +11,7 @@ const User = ({ onClose, user, onDelete }) => {
     //TESTI
 
     return (
-        <div className="background_image_stats"> 
+        <> 
             
             <table className="userInfo">
                 <thead>
@@ -60,7 +60,7 @@ const User = ({ onClose, user, onDelete }) => {
             <br></br>
             <button className="deleteButton" onClick={onDelete}> Delete account</button>
             
-       </div>
+       </>
     )
 }
 
