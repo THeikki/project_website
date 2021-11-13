@@ -26,7 +26,8 @@ const Register = ({ onAdd, onPress }) => {
       }
 
     return (
-        <div className="registerComponent">
+        <div className="background_image_intro">
+            <div className="registerComponent">
             <h2>Register</h2>
             <div>
                 <label>User name</label>
@@ -43,7 +44,10 @@ const Register = ({ onAdd, onPress }) => {
             <br></br>
             <p>If you are registered already, please</p>
             <button className="linkButton" onClick={onPress}> Log in here </button>
-        </div>    
+            </div>    
+
+        </div>
+        
     )
 }
 
