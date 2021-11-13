@@ -141,7 +141,6 @@ function App() {
     setShowLogin(false)
     setShowRegister(true)
   }
-  
 
   return (
     <div className="background_image">
