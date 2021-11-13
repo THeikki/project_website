@@ -142,6 +142,8 @@ function App() {
     setShowRegister(true)
   }
 
+  //TESTI
+
   return (
     <div className="background_image">
       <div className="content">
