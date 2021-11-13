@@ -175,6 +175,7 @@ h1 {
   margin-top: 50px;
   width: 500px;
   background-color: cadetblue;
+  opacity: .5;
   border-radius: 5px;
 }
 
