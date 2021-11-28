@@ -7,8 +7,6 @@ const User = ({ onClose, user, onDelete }) => {
             </div>
         )
     }
-    
-    //TESTI
 
     return (
         <> 
