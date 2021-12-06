@@ -144,8 +144,6 @@ function App() {
     setShowRegister(true)
   }
 
-  //TESTI
-
   return (
     <div >
       <div className="content">
