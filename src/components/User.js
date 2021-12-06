@@ -8,6 +8,7 @@ const User = ({ onClose, user, onDelete }) => {
         )
     }
    //TESTI
+   //TESTI
     return (
         <div className="background_image_userview"> 
             
