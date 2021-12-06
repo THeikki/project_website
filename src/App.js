@@ -10,13 +10,14 @@ function App() {
   const [showRegister, setShowRegister] = useState(true)
   const [showLogin, setShowLogin] = useState(false)
   const [showUser, setShowUser] = useState(true)
-
+  
   // Get user info
 
   const getUserInfo = () => {
+
     const id = JSON.parse(localStorage.getItem("userId"))
     const token = JSON.parse(localStorage.getItem("token")) 
-   
+    
     axios.get("https://project-game-api.herokuapp.com/api/users/" +id, {
       headers: {
         "Authorization": 'Bearer ' + token
@@ -32,15 +33,15 @@ function App() {
         console.log(err.response.data.message)
       })
   }
-
+ 
   // Log in user
 
-  const login = ({ username, password }) => {
+  const login = ({username, password}) => {
     const user = {
       username: username,
       password: password
     }
-    
+     
     axios.post("https://project-game-api.herokuapp.com/api/users/login", user)
     .then(res => {
       var alertMessage = JSON.stringify(res.data.message)
@@ -50,7 +51,7 @@ function App() {
       if(alertMessage) {
         alert(alertMessage)
         localStorage.removeItem(token)
-      }
+      } 
      
       localStorage.setItem("token", token)
       localStorage.setItem("userId", id)
@@ -65,6 +66,7 @@ function App() {
      
     }).catch(err => {
       console.log(err)
+     
     })
   }
 
@@ -148,7 +150,7 @@ function App() {
     <div className="background_image">
       <div className="content">
         {showRegister ? <Register onAdd={register} onPress={showLoginComponent}/> : null}
-        {showLogin ? <Login onAdd={login} onPress={showRegisterComponent}/> : null}  
+        {showLogin ? <Login onSet={login} onPress={showRegisterComponent}/> : null}  
         {showUser ? <User user={user} onClose={logout} onDelete={deleteUser} /> : null}
       </div>
     </div>

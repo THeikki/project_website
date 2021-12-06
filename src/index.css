@@ -18,6 +18,16 @@ body {
   
 }
 
+.background_image_userview{
+  background-image: url(./Register.png);
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+  background-position: center;
+  background-size: cover; 
+  
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const Login = ({ onAdd, onPress }) => {
+const Login = ({ onSet, onPress }) => {
 
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
@@ -18,13 +18,13 @@ const Login = ({ onAdd, onPress }) => {
             return
         }
 
-        onAdd({ username, password })
+        onSet({ username, password })
     
         setUsername("")
         setPassword("")
         
       }
-
+    
       //TESTI
 
     return (

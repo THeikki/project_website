@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const Register = ({ onAdd, onPress }) => {
+const Register = ({ onSet, onPress }) => {
 
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
@@ -18,7 +18,7 @@ const Register = ({ onAdd, onPress }) => {
             return
         }
 
-        onAdd({ username, password })
+        onSet({ username, password })
     
         setUsername("")
         setPassword("")
@@ -44,10 +44,7 @@ const Register = ({ onAdd, onPress }) => {
             <br></br>
             <p>If you are registered already, please</p>
             <button className="linkButton" onClick={onPress}> Log in here </button>
-        </div>    
-
-       
-        
+        </div>        
     )
 }
 
