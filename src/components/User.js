@@ -8,8 +8,6 @@ const User = ({ onClose, user, onDelete }) => {
         )
     }
 
-    //TESTI
-
     return (
         <> 
             

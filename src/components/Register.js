@@ -24,7 +24,7 @@ const Register = ({ onSet, onPress }) => {
         setPassword("")
         
       }
-
+      
     return (
        
         <div className="registerComponent">
