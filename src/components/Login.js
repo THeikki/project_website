@@ -29,7 +29,7 @@ const Login = ({ onSet, onPress }) => {
       // TESTI
 
     return (
-        <div className="background_image">
+        
             <div className="loginComponent">
                 <h2>Login</h2>
                 <div>
@@ -50,7 +50,7 @@ const Login = ({ onSet, onPress }) => {
                 <button className="linkButton" onClick={onPress}> Register here </button>
             </div>    
 
-        </div>
+       
         
     )
 }

@@ -27,7 +27,7 @@ const Register = ({ onSet, onPress }) => {
       
     return (
        
-        <div className="background_image">
+       
             <div className="registerComponent">
                 <h2>Register</h2>
                 <div>
@@ -47,7 +47,7 @@ const Register = ({ onSet, onPress }) => {
                 <button className="linkButton" onClick={onPress}> Log in here </button>
             </div>        
 
-        </div>
+      
         
     )
 }

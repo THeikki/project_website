@@ -147,7 +147,7 @@ function App() {
   //TESTI
 
   return (
-    <div>
+    <div className="background_image">
       <div className="content">
         {showRegister ? <Register onAdd={register} onPress={showLoginComponent}/> : null}
         {showLogin ? <Login onSet={login} onPress={showRegisterComponent}/> : null}  
