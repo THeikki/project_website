@@ -10,7 +10,7 @@ body {
 
 .background_image{
   background-image: url(./Main_background.png);
-  position: relative;
+  position: absolute;
   min-width: 100%;
   min-height: 100%;
   background-position: center;
@@ -20,7 +20,7 @@ body {
 
 .background_image_userview{
   background-image: url(./Register.png);
-  position: relative;
+  position: absolute;
   min-width: 100%;
   min-height: 100%;
   background-position: center;
