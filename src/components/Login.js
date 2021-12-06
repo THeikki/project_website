@@ -26,8 +26,7 @@ const Login = ({ onSet, onPress }) => {
       }
     
       //TESTI
-      // TESTI
-
+      
     return (
         <div className="background_image">
             <div className="loginComponent">
