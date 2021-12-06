@@ -149,7 +149,7 @@ function App() {
   return (
     <div >
       <div className="content">
-        {showRegister ? <Register onAdd={register} onPress={showLoginComponent}/> : null}
+        {showRegister ? <Register onSet={register} onPress={showLoginComponent}/> : null}
         {showLogin ? <Login onSet={login} onPress={showRegisterComponent}/> : null}  
         {showUser ? <User user={user} onClose={logout} onDelete={deleteUser} /> : null}
       </div>
