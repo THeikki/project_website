@@ -24,7 +24,7 @@ const Register = ({ onSet, onPress }) => {
         setPassword("")
         
       }
-      
+      //TESTI
     return (
        
         <div className="background_image">
