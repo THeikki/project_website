@@ -27,24 +27,28 @@ const Register = ({ onSet, onPress }) => {
       
     return (
        
-        <div className="registerComponent">
-            <h2>Register</h2>
-            <div>
-                <label>User name</label>
+        <div className="background_image">
+            <div className="registerComponent">
+                <h2>Register</h2>
+                <div>
+                    <label>User name</label>
+                    <br></br>
+                    <input className="inputBox" type="text" placeholder="User name" value={username} onChange={(e) => setUsername(e.target.value)}/>
+                </div>
+                <div>
+                    <label>Password</label>
+                    <br></br>
+                    <input className="inputBox" type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+                </div> 
+                <button className="registerButton" onClick={onRegister}> Register </button>
                 <br></br>
-                <input className="inputBox" type="text" placeholder="User name" value={username} onChange={(e) => setUsername(e.target.value)}/>
-            </div>
-            <div>
-                <label>Password</label>
                 <br></br>
-                <input className="inputBox" type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
-            </div> 
-            <button className="registerButton" onClick={onRegister}> Register </button>
-            <br></br>
-            <br></br>
-            <p>If you are registered already, please</p>
-            <button className="linkButton" onClick={onPress}> Log in here </button>
-        </div>        
+                <p>If you are registered already, please</p>
+                <button className="linkButton" onClick={onPress}> Log in here </button>
+            </div>        
+
+        </div>
+        
     )
 }
 
