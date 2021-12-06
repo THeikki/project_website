@@ -33,12 +33,12 @@ const Register = ({ onSet, onPress }) => {
                 <div>
                     <label>User name</label>
                     <br></br>
-                    <input className="inputBox" type="text" placeholder="User name" value={username} onChange={(e) => setUsername(e.target.value)}/>
+                    <input type="text" placeholder="User name" value={username} onChange={(e) => setUsername(e.target.value)}/>
                 </div>
                 <div>
                     <label>Password</label>
                     <br></br>
-                    <input className="inputBox" type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+                    <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
                 </div> 
                 <button className="registerButton" onClick={onRegister}> Register </button>
                 <br></br>
