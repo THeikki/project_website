@@ -25,7 +25,7 @@ const Register = ({ onSet, onPress }) => {
         
       }
       //TESTI
-      //TESTI
+      
     return (
        
         <div className="background_image">
