@@ -9,7 +9,7 @@ const User = ({ onClose, user, onDelete }) => {
     }
 
     return (
-        <> 
+        <div className="background_image_userview"> 
             
             <table className="userInfo">
                 <thead>
@@ -58,7 +58,7 @@ const User = ({ onClose, user, onDelete }) => {
             <br></br>
             <button className="deleteButton" onClick={onDelete}> Delete account</button>
             
-       </>
+       </div>
     )
 }
 
