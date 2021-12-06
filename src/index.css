@@ -10,7 +10,7 @@ body {
 
 .background_image{
   background-image: url(./Main_background.png);
-  position: absolute;
+  position: fixed;
   min-width: 100%;
   min-height: 100%;
   background-position: center;
